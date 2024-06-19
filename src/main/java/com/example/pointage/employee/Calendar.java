@@ -1,4 +1,4 @@
-package employee;
+package com.example.pointage.employee;
 
 import java.util.Date;
 import java.util.List;

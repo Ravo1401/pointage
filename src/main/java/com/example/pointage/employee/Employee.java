@@ -1,4 +1,4 @@
-package employee;
+package com.example.pointage.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
