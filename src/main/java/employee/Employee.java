@@ -11,17 +11,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
-    private String prenom;
-    private String nom;
+    private String firstName;
+    private String lastName;
     private String matricule;
-    private Date dateNaissance;
-    private Date dateEmbauche;
-    private Date dateFin;
-    private double salaireBrute;
-    private Categorie categorie;
-    private List<JourDeTravail> jourDeTravail;
+    private Date birthDate;
+    private Date hireDate;
+    private Date endDate;
+    private double salaryBrut;
+    private Category category;
+    private List<WorkDay> workDays;
 
-    public double calculeSalaireNet() {
-        return salaireBrute - salaireBrute * 0.20;
+    public double calculateSalaryNet() {
+        return salaryBrut - salaryBrut * 0.20;
     }
 }
