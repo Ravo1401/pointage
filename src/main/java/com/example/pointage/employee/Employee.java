@@ -1,14 +1,15 @@
 package com.example.pointage.employee;
 
+import com.example.pointage.Category;
+import com.example.pointage.WorkDay;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
     private String firstName;
@@ -20,8 +21,6 @@ public class Employee {
     private double salaryBrut;
     private Category category;
     private List<WorkDay> workDays;
-
-    public double calculateSalaryNet() {
-        return salaryBrut - salaryBrut * 0.20;
-    }
 }
+
+
