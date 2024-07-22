@@ -7,6 +7,8 @@ import com.example.pointage.WorkDay;
 import com.example.pointage.service.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculTest {
+    private static final Logger log = LoggerFactory.getLogger(CalculTest.class);
     private Employee rakoto;
     private Employee rabe;
     private Calendar calendar;
@@ -79,7 +82,7 @@ public class CalculTest {
         Salary salary = Calculator.calculateSalary(rakoto, calendar);
         double expectedBrut = 100000 * 6; // 6 semaines de travail normal
         double expectedNet = expectedBrut * 0.8;
-        System.out.println(expectedBrut);
+        log.info("" + expectedBrut);
         assertEquals(expectedBrut, salary.getBrut(), 0.001);
         assertEquals(expectedNet, salary.getNet(), 0.001);
     }
@@ -90,7 +93,7 @@ public class CalculTest {
         Salary salary = Calculator.calculateSalary(rabe, calendar);
         double expectedBrut = 100000 * 6 * 1.3; // 6 semaines de travail de nuit avec majoration de 30%
         double expectedNet = expectedBrut * 0.8;
-        System.out.println(expectedBrut);
+        log.info("" + expectedBrut);
         assertEquals(expectedBrut, salary.getBrut(), 0.001);
         assertEquals(expectedNet, salary.getNet(), 0.001);
     }
